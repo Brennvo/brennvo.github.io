@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;700&display=swap");
+
+:root {
+  --bg-color: #fcfcfc;
+  --font-color: #1c1c1c;
+  --underline-color: #658699;
+}
+
+.darkmode {
+  --bg-color: #1c1c1c;
+  --font-color: #fcfcfc;
+  --underline-color: #ebebf54d;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0 15px;
+  background: var(--bg-color);
+}
+
+main {
+  margin: 0 auto;
+  max-width: 500px;
+
+  color: var(--font-color);
+  font-family: "Karla", sans-serif;
+  position: relative;
+}
+
+main.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  font-weight: 300;
+  margin: 15px 0;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 15px 0 30px 0;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-color: var(--underline-color);
+}
+
+/* h1,
+h2,
+h3,
+h4,
+h5 {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-color: var(--underline-color);
+} */
+
+a {
+  text-decoration-color: var(--underline-color);
+}
+
+a:link,
+a:visited {
+  color: var(--font-color);
+}
+
+a:hover {
+  color: var(--underline-color);
+}
+
+a[href^="http"] {
+  position: relative;
+}
+
+a[href^="http"]::after {
+  content: url(./images/external-link.svg);
+  position: relative;
+  padding-left: 5px;
+}
+
+.list {
+  margin: 0 auto;
+  list-style-type: disc;
+  text-align: left;
+  font-weight: 300;
+
+  margin-bottom: 20px;
+}
+
+.darkmode a[href^="http"]::after {
+  content: url(./images/dark-mode-external-link.svg);
+  position: relative;
+  padding-left: 5px;
+}
+
+.color-toggle {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  cursor: pointer;
+  background: unset;
+  border: unset;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  outline: none;
+
+  background-image: url("./images/light.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  fill: green;
+}
+
+.darkmode .color-toggle {
+  background-image: url("./images/dark-mode-light.svg");
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.nav {
+  flex-shrink: 0;
+  margin: 30px 0;
+}
+
+.nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav__list li {
+  padding: 10px;
+}
+
+.home .nav__link--external {
+  display: flex;
+}
+
+.img-frame {
+  display: block;
+  margin: 0 auto 30px auto;
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.menu .menu__list.show {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu__list {
+  padding: 10px 0 0 0;
+  margin: 0;
+  list-style-type: none;
+  padding-bottom: 20px;
+}
+
+.js .menu__list {
+  display: none;
+}
+
+.menu__list li {
+  padding: 5px 0;
+  text-align: center;
+  border-bottom: 1px solid var(--underline-color);
+}
+
+.menu__list li a {
+  text-align: center;
+  text-decoration: none;
+}
+
+.menu button {
+  display: none;
+}
+
+.js .menu button {
+  display: block;
+}
+
+.js .menu button {
+  outline: none;
+  border: unset;
+  background: url("./images/menu.svg");
+  background-repeat: no-repeat;
+  height: 25px;
+  width: 25px;
+
+  position: absolute;
+  top: 9px;
+  right: 0;
+}
+
+.js.darkmode .menu button {
+  background: url("./images/dark-mode-menu.svg");
+}
+
+.js .menu button span {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+@media (min-width: 993px) {
+  nav {
+    display: inline-block;
+  }
+
+  .js .menu button {
+    display: none;
+  }
+
+  .menu .menu__list {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu__list li {
+    text-align: unset;
+    border-bottom: none;
+  }
+
+  .menu .menu__list li:not(:last-of-type) {
+    padding: 0 10px;
+  }
+
+  .menu .menu__list li:last-of-type {
+    padding: 0 0 0 10px;
+  }
+}

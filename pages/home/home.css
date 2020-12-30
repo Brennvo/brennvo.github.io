@@ -1,0 +1,45 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+main {
+  height: 100%;
+}
+
+.intro {
+  flex-grow: 1;
+  margin-top: 16px;
+}
+
+.intro p,
+.intro h1 {
+  text-align: center;
+}
+
+.intro h1:hover::before {
+  position: absolute;
+  content: "👋";
+  left: calc(50% - 160px);
+
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: wave 0.5s;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: 1;
+}
+
+@keyframes wave {
+  0% {
+    transform: translate(1px, 1px) rotate(45deg);
+  }
+  33% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  66% {
+    transform: translate(1px, 1px) rotate(45deg);
+  }
+}
