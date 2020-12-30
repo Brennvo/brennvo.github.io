@@ -23,7 +23,7 @@ function hideMenu() {
 
 function addMenuToggle() {
   const menuBtn = document.querySelector(".menu__btn");
-
+  console.log("the btn: ", menuBtn);
   menuBtn.addEventListener("click", function () {
     const list = this.nextElementSibling;
     if (list.classList.contains("show")) {
