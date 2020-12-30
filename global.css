@@ -100,6 +100,11 @@ a[href^="http"]::after {
   margin-bottom: 20px;
 }
 
+.list li:not(:last-of-type) {
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+
 .darkmode a[href^="http"]::after {
   content: url(./images/dark-mode-external-link.svg);
   position: relative;
@@ -199,6 +204,14 @@ a[href^="http"]::after {
 .menu__list li a {
   text-align: center;
   text-decoration: none;
+}
+
+.menu__list li.menu__selected {
+  background: var(--underline-color);
+}
+
+.menu__list li.menu__selected a {
+  color: var(--font-color);
 }
 
 .menu button {
