@@ -10,6 +10,7 @@
   --bg-color: #1c1c1c;
   --font-color: #fcfcfc;
   --underline-color: #ebebf54d;
+  --underline-color: #41657c;
 }
 
 html {
@@ -131,6 +132,28 @@ a[href^="http"]::after {
 
 .darkmode .color-toggle {
   background-image: url("./images/dark-mode-light.svg");
+}
+
+.color-toggle span {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.color-toggle:active,
+.color-toggle:focus,
+.color-toggle:hover {
+  background-image: url("./images/light-hover.svg");
+}
+
+.darkmode .color-toggle:active,
+.darkmode .color-toggle:focus,
+.darkmode .color-toggle:hover {
+  background-image: url("./images/dark-mode-light-hover.svg");
 }
 
 .bold {
