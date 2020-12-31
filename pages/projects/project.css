@@ -1,0 +1,18 @@
+.project__showcase {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 30px 0;
+  border: 1px solid var(--font-color);
+}
+
+.project__showcase img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.project__showcase h2 {
+  margin-top: 0;
+}

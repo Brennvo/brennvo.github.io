@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brennan Arvo's Website</title>
+    <link rel="stylesheet" href="../../global.css" />
+    <link rel="stylesheet" href="./project.css" />
+  </head>
+  <body>
+    <nav class="menu" role="navigation">
+      <button class="menu__btn" aria-expanded="false">
+        <span>Menu</span>
+      </button>
+      <ul class="menu__list">
+        <li><a href="../home/home.html">Home</a></li>
+        <li><a href="../about/about.html">About Me</a></li>
+        <li class="menu__selected">
+          <a href="./projects.html">Projects</a>
+        </li>
+        <li>
+          <a href="../tech_stack/tech_stack.html">Tech Stack</a>
+        </li>
+        <li>
+          <a
+            aria-label="Brennan Arvo's GitHub page will open in a new window."
+            class="nav__link--external"
+            href="https://github.com/Brennvo"
+            target="_blank"
+            >GitHub</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <section class="tech-stack">
+        <h1>Projects</h1>
+
+        <p>
+          These are the side projects I've fully committed to finishing and/or
+          completing. I create a project if it will help me learn something new
+          or if it solves an immeidate problem. You can visit
+          <a href="https://github.com/Brennvo">my Github</a> for source code.
+        </p>
+
+        <div class="project">
+          <div class="project__showcase">
+            <h2>MeMoji</h2>
+            <img src="../../images/memoji.png" />
+            <div class="project__showcase__desc">
+              <p>
+                MeMoji is an application that allows a user to curate an emoji
+                from head to toe. I built this to familiarize myself with
+                TypeScript in a React JS application.
+              </p>
+              <p class="list__description">Tech Stack/Technologies:</p>
+              <ol class="list">
+                <li>React JS</li>
+                <li>TypeScript</li>
+                <li>Raw CSS</li>
+              </ol>
+              <a href="https://brennvo.github.io/MeMoji/" target="_blank"
+                >Live Demo</a
+              >
+            </div>
+          </div>
+
+          <div class="project__showcase">
+            <h2>The North Poll</h2>
+            <img src="../../images/north_poll_homepage.png" />
+            <div class="project__showcase__desc">
+              <p>
+                This is on in-progress application that is a twist on a Secret
+                Santa gift exchange. As a participant of many of these gift
+                exchanges, I always liked that it meant I only needed to spend
+                money on a single gift. However, I disliked that I was only
+                thinking about one other individual in the group leading up to
+                the event. To solve this problem, I came up with the North Poll.
+                The idea is that each person will still receive one gift, but
+                the collective group will decide on what you receive instead of
+                just one random individual. Each user has a gift board of
+                curated suggestinos from other group members, and the most higly
+                voted item is what will be received at the exchange.
+              </p>
+
+              <p class="list__description">Tech Stack/Technologies:</p>
+              <ol class="list">
+                <li>React JS</li>
+                <li>TypeScript</li>
+                <li>NestJS (Node Express framework)</li>
+                <li>Postgres</li>
+                <li>OAuth authentication with JSON Web Tokens (JWT)</li>
+              </ol>
+              <p></p>
+              <a href="https://github.com/Brennvo/" target="_blank"
+                >Source Code</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="../../js/darkMode.js"></script>
+  <script src="../../index.js"></script>
+</html>
