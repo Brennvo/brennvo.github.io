@@ -1,3 +1,11 @@
+/***********************************
+************************************
+ Contact Page
+************************************
+***********************************/
+
+/*========Page Specific Layout=========*/
+
 .contact__list {
   list-style-type: none;
   padding: 0 50px;
@@ -11,8 +19,4 @@
   align-items: center;
   margin: 0px;
   padding: 10px;
-}
-
-.contact__list li p {
-  margin: 3px 0;
 }
