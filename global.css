@@ -114,7 +114,8 @@ a:hover {
   color: var(--underline-color);
 }
 
-a[href^="http"] {
+a[href^="http"],
+a[href^="mailto"] {
   position: relative;
   /* Must display flex for firefox psuedo element background */
   display: flex;
