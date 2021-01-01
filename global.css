@@ -1,17 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap");
+
+/***********************************
+************************************
+ Global elements
+************************************
+***********************************/
+
+/**
+  * When JS is enabled the "js" class is appended to the root element.
+  * To style a class only if JS is enabled, use the descendent selector.
+  * @example .js .your-element
+
+  * When dark mode is enabled the "darkmode" class is appended to the
+  * root element. To style a class in dark mode, just use the descendent
+  * selector.
+  * @example .darkmode .your-element
+  */
 
 :root {
   --bg-color: #fcfcfc;
   --font-color: #1c1c1c;
   --underline-color: #658699;
-}
-
-.darkmode {
-  --bg-color: #1c1c1c;
-  --font-color: #fcfcfc;
-  --underline-color: #ebebf54d;
-  --underline-color: #41657c;
 }
 
 html {
@@ -24,44 +33,38 @@ html {
   box-sizing: inherit;
 }
 
+.darkmode {
+  --bg-color: #1c1c1c;
+  --font-color: #fcfcfc;
+  --underline-color: #ebebf54d;
+  --underline-color: #41657c;
+}
+
+/*========Common HTML elements and global layout=========*/
+
 body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg-color);
+  color: var(--font-color);
   position: relative;
   padding: 0 15px;
-  background: var(--bg-color);
   max-width: 600px;
   margin: 0 auto;
-  font-family: "Inter", "Karla", sans-serif;
 }
 
 main {
-  color: var(--font-color);
   position: relative;
 }
 
-main.home {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+/*------Typography-------*/
 
 p {
+  font-size: 15px;
   font-weight: 300;
-  margin: 15px 0;
-  /* letter-spacing: 0.5px; */
   letter-spacing: -0.131966px;
   line-height: 24px;
-  font-size: 15px;
+  margin: 15px 0;
 }
-
-.list__description {
-  margin-bottom: 5px;
-}
-
-/* h1 {
-  font-weight: 700;
-  font-size: 2rem;
-  margin: 15px 0 30px 0;
-} */
 
 h1 {
   font-size: 24px;
@@ -91,6 +94,8 @@ h5 {
   margin-top: 50px;
 }
 
+/*------Anchor links-------*/
+
 a {
   text-decoration-color: var(--underline-color);
 }
@@ -115,6 +120,16 @@ a[href^="mailto"]::after {
   padding-left: 5px;
 }
 
+.darkmode a[href^="http"]::after,
+.darkmode a[href^="mailto"]::after {
+  content: url(./images/dark-mode-external-link.svg);
+  position: relative;
+  padding-left: 5px;
+}
+
+/*========Custom UI elements=========*/
+
+/*------Ordered/Unordered Lists-------*/
 .list {
   margin: 0 auto;
   list-style-type: disc;
@@ -124,19 +139,17 @@ a[href^="mailto"]::after {
   margin-bottom: 20px;
 }
 
+.list__description {
+  margin-bottom: 5px;
+}
+
 .list li:not(:last-of-type) {
   line-height: 1.2;
   margin-bottom: 5px;
 }
 
-.darkmode a[href^="http"]::after,
-a[href^="mailto"]::after {
-  content: url(./images/dark-mode-external-link.svg);
-  position: relative;
-  padding-left: 5px;
-}
-
-.color-toggle {
+/*------Color Mode Toggle Button-------*/
+.color-mode__btn {
   position: absolute;
   right: 15px;
   top: 10px;
@@ -154,11 +167,11 @@ a[href^="mailto"]::after {
   fill: green;
 }
 
-.darkmode .color-toggle {
+.darkmode .color-mode__btn {
   background-image: url("./images/dark-mode-light.svg");
 }
 
-.color-toggle span {
+.color-mode__btn span {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
   padding: 0;
@@ -168,65 +181,34 @@ a[href^="mailto"]::after {
   overflow: hidden;
 }
 
-.color-toggle:active,
-.color-toggle:focus,
-.color-toggle:hover {
+.color-mode__btn:active,
+.color-mode__btn:focus,
+.color-mode__btn:hover {
   background-image: url("./images/light-hover.svg");
 }
 
-.darkmode .color-toggle:active,
-.darkmode .color-toggle:focus,
-.darkmode .color-toggle:hover {
+.darkmode .color-mode__btn:active,
+.darkmode .color-mode__btn:focus,
+.darkmode .color-mode__btn:hover {
   background-image: url("./images/dark-mode-light-hover.svg");
 }
 
-.bold {
-  font-weight: 700;
-}
+/*------Global Navigation Menu-------*/
 
-.nav {
-  flex-shrink: 0;
-  margin: 30px 0;
-}
-
-.nav__list {
+/**
+  * The menu is the wrapper around the button and list itself. The menu
+  * is always centered on the screen, regardless of mobile or desktop.
+  */
+.menu {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.nav__list li {
-  padding: 10px;
-}
-
-.home .nav__link--external {
-  display: flex;
-}
-
-.img-frame {
-  display: block;
-  margin: 0 auto 30px auto;
-  position: relative;
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.menu {
   position: relative;
   margin: 10px 0 30px 0;
   width: 100%;
-
-  display: flex;
-  flex-wrap: wrap;
-  /* justify-content: flex-end; */
-  justify-content: center;
 }
 
+/* This represents the bottom border around the wrapper */
 .menu::after {
   position: absolute;
   content: "";
@@ -238,18 +220,18 @@ a[href^="mailto"]::after {
   opacity: 25%;
 }
 
-.menu .menu__list.show {
-  display: flex;
-  flex-direction: column;
-  padding: 8px 0;
+/* If JavaScript is enabled, initially hide the expandable menu list on mobile */
+.js .menu__list {
+  display: none;
 }
 
+/* The list of nav links will show by default, even on mobile (unless JS is enabled) */
 .menu__list {
   position: relative;
+  flex-basis: 100%;
   padding: 0;
   margin: 0;
   list-style-type: none;
-  flex-basis: 100%;
   animation: fadeIn 1s;
   -webkit-animation: fadeIn 1s;
 }
@@ -271,28 +253,7 @@ a[href^="mailto"]::after {
   }
 }
 
-.js .menu__list {
-  display: none;
-}
-
-.menu__list li {
-  padding: 5px 0;
-  text-align: center;
-  /* border-bottom: 1px solid var(--underline-color); */
-}
-
-.menu__list li a {
-  text-align: center;
-  text-decoration: none;
-}
-
-.menu__list li.menu__selected {
-  /* text-decoration: underline;
-  text-decoration-color: var(--underline-color); */
-  font-weight: 700;
-}
-
-.menu .menu__list:before {
+.menu__list:before {
   position: absolute;
   content: "";
   background: var(--font-color);
@@ -303,54 +264,51 @@ a[href^="mailto"]::after {
   opacity: 25%;
 }
 
-/* .menu__list li.menu__selected a {
-  color: var(--font-color);
-} */
+/* If mobile and menu is clicked, it expands vertically */
+.menu__list.show {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+}
 
-.menu button {
+.menu__list li {
+  padding: 5px 0;
+  text-align: center;
+}
+
+.menu__list li.menu__selected {
+  font-weight: 700;
+}
+
+.menu__list li a {
+  text-align: center;
+  text-decoration: none;
+}
+
+/**
+  * If JavaScript is disabled, then the expanded menu will always show,
+  * so there is no need to show the menu button to expand/collapse
+ */
+.menu__btn {
   display: none;
 }
 
-.js .menu button {
+.js .menu__btn {
   display: block;
   padding: 10px 0;
-}
-
-/* .js .menu button {
-  border: unset;
-  background: url("./images/menu.svg");
-  background-repeat: no-repeat;
-  height: 25px;
-  width: 25px;
-} */
-
-.js .menu button {
   border: unset;
   font-family: inherit;
   background: none;
 }
 
-.js .menu button span {
+/* Styled menu button text */
+.js .menu__btn span {
   color: var(--font-color);
   font-family: inherit;
   font-size: 16px;
 }
 
-/* .js.darkmode .menu button {
-  background: url("./images/dark-mode-menu.svg");
-} */
-
-/* .js .menu button span {
-  position: absolute;
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0;
-  border: 0;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-} */
-
-@media (min-width: 350px) {
+@media (min-width: 375px) {
   nav {
     display: inline-block;
   }
@@ -359,17 +317,15 @@ a[href^="mailto"]::after {
     display: none;
   }
 
-  .menu .menu__list {
+  .menu .menu__list,
+  .menu .menu__list.show {
     display: flex;
     flex-direction: row;
     list-style-type: none;
     justify-content: center;
     margin: 0;
-    animation: none;
     padding: 10px 0;
-    /* border-top: 1px solid var(--font-color);
-    border-bottom: 1px solid var(--font-color); */
-    /* padding: 15px 0; */
+    animation: none;
   }
 
   .menu__list li {
