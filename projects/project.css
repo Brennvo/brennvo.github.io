@@ -27,3 +27,7 @@
   object-fit: cover;
   object-position: 50% 50%;
 }
+
+.project__links a:first-child {
+  margin-bottom: 16px;
+}
