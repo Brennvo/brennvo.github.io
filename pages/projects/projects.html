@@ -18,40 +18,37 @@
         <li class="menu__selected">
           <a href="./projects.html">Projects</a>
         </li>
-        <li>
-          <a href="../tech_stack/tech_stack.html">Tech Stack</a>
-        </li>
-        <li>
-          <a
-            aria-label="Brennan Arvo's GitHub page will open in a new window."
-            class="nav__link--external"
-            href="https://github.com/Brennvo"
-            target="_blank"
-            >GitHub</a
-          >
-        </li>
+        <li><a href="../contact/contact.html">Contact</a></li>
       </ul>
     </nav>
     <main>
       <section class="tech-stack">
         <h1>Projects</h1>
-
         <p>
-          These are the side projects I've fully committed to finishing and/or
-          completing. I create a project if it will help me learn something new
-          or if it solves an immeidate problem. You can visit
-          <a href="https://github.com/Brennvo">my Github</a> for source code.
+          The motivation behind my projects is to solve an attainable problem
+          and learn something new.
         </p>
-
         <div class="project">
           <div class="project__showcase">
             <h2>MeMoji</h2>
-            <img src="../../images/memoji.png" />
+            <img src="../../images/memoji2.png" />
             <div class="project__showcase__desc">
               <p>
-                MeMoji is an application that allows a user to curate an emoji
-                from head to toe. I built this to familiarize myself with
-                TypeScript in a React JS application.
+                I built this application because I found myself creating what I
+                like to call "MeMojis" in my iMessage conversations. A "MeMoji"
+                contains a variation of a hat, smiley face, shirt, pant, and
+                shoe — all stacked on top of each other — to create a fancier
+                looking stick figure. Usually, I'd have to sift through all of
+                the possible emojis and find ones that would fit the bill. So
+                instead of having to find all the possible combinations and
+                format it myself in iMessage, I created this application to
+                share my creative idea with others and allow them to share their
+                MeMojis with other people.
+              </p>
+
+              <p>
+                In this application, a user can build their character, copy it
+                to their clipboard, and then share it amongst their friends.
               </p>
               <p class="list__description">Tech Stack/Technologies:</p>
               <ol class="list">
@@ -59,9 +56,6 @@
                 <li>TypeScript</li>
                 <li>Raw CSS</li>
               </ol>
-              <a href="https://brennvo.github.io/MeMoji/" target="_blank"
-                >Live Demo</a
-              >
             </div>
           </div>
 
@@ -70,26 +64,38 @@
             <img src="../../images/north_poll_homepage.png" />
             <div class="project__showcase__desc">
               <p>
-                This is on in-progress application that is a twist on a Secret
-                Santa gift exchange. As a participant of many of these gift
-                exchanges, I always liked that it meant I only needed to spend
-                money on a single gift. However, I disliked that I was only
-                thinking about one other individual in the group leading up to
-                the event. To solve this problem, I came up with the North Poll.
-                The idea is that each person will still receive one gift, but
-                the collective group will decide on what you receive instead of
-                just one random individual. Each user has a gift board of
-                curated suggestinos from other group members, and the most higly
-                voted item is what will be received at the exchange.
+                As a participant of many secret santa gift exchanges (before
+                COVID times), I always liked that it meant I only needed to
+                spend money on a single gift. However, I disliked that I was
+                only thinking about one other individual in the group leading up
+                to the event. To solve this problem, I came up with the North
+                Poll; a slight twist on the secret santa exchange. The idea is
+                that each individual would contribute the price of a single gift
+                — which can be configured — to the group so that each
+                participant can receive a single gift. Then, when the polls open
+                in The North Poll, individuals are encouraged to post
+                suggestions for each participant and vote on the suggestion that
+                is their favorite. When the polls close and the most popular
+                suggestion is determined, the group administrator will
+                hypothetically purchase the gifts for each participant and
+                reveal them to the participants when they formally meet in
+                person.
+              </p>
+
+              <p>
+                This keeps the integrity of only purchasing a single gift with
+                the benefit of playing a factor on what each participant will
+                receive.
               </p>
 
               <p class="list__description">Tech Stack/Technologies:</p>
               <ol class="list">
                 <li>React JS</li>
                 <li>TypeScript</li>
+                <li>Chakra UI</li>
+                <li>OAuth with JSON Web Tokens (JWT)</li>
                 <li>NestJS (Node Express framework)</li>
                 <li>Postgres</li>
-                <li>OAuth authentication with JSON Web Tokens (JWT)</li>
               </ol>
               <p></p>
               <a href="https://github.com/Brennvo/" target="_blank"

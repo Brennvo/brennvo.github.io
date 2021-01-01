@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap");
 
 :root {
   --bg-color: #fcfcfc;
@@ -27,9 +28,9 @@ body {
   position: relative;
   padding: 0 15px;
   background: var(--bg-color);
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
-  font-family: "Karla", sans-serif;
+  font-family: "Inter", "Karla", sans-serif;
 }
 
 main {
@@ -46,28 +47,49 @@ main.home {
 p {
   font-weight: 300;
   margin: 15px 0;
-  letter-spacing: 0.5px;
-  line-height: 1.2;
+  /* letter-spacing: 0.5px; */
+  letter-spacing: -0.131966px;
+  line-height: 24px;
+  font-size: 15px;
 }
 
-h1 {
+.list__description {
+  margin-bottom: 5px;
+}
+
+/* h1 {
   font-weight: 700;
   font-size: 2rem;
   margin: 15px 0 30px 0;
-  text-decoration: underline;
-  text-underline-offset: 5px;
-  text-decoration-color: var(--underline-color);
+} */
+
+h1 {
+  font-size: 24px;
 }
 
-/* h1,
 h2,
 h3,
 h4,
 h5 {
-  text-decoration: underline;
-  text-underline-offset: 5px;
-  text-decoration-color: var(--underline-color);
-} */
+  font-size: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-align: center;
+  font-weight: 400;
+}
+
+* + h1,
+* + h2,
+* + h3,
+* + h4,
+* + h5 {
+  margin-top: 50px;
+}
 
 a {
   text-decoration-color: var(--underline-color);
@@ -86,7 +108,8 @@ a[href^="http"] {
   position: relative;
 }
 
-a[href^="http"]::after {
+a[href^="http"]::after,
+a[href^="mailto"]::after {
   content: url(./images/external-link.svg);
   position: relative;
   padding-left: 5px;
@@ -106,7 +129,8 @@ a[href^="http"]::after {
   margin-bottom: 5px;
 }
 
-.darkmode a[href^="http"]::after {
+.darkmode a[href^="http"]::after,
+a[href^="mailto"]::after {
   content: url(./images/dark-mode-external-link.svg);
   position: relative;
   padding-left: 5px;
@@ -193,25 +217,58 @@ a[href^="http"]::after {
 }
 
 .menu {
-  margin: 10px 0;
+  position: relative;
+  margin: 10px 0 30px 0;
   width: 100%;
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
+  justify-content: center;
+}
+
+.menu::after {
+  position: absolute;
+  content: "";
+  background: var(--font-color);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  opacity: 25%;
 }
 
 .menu .menu__list.show {
   display: flex;
   flex-direction: column;
+  padding: 8px 0;
 }
 
 .menu__list {
-  padding: 10px 0 0 0;
+  position: relative;
+  padding: 0;
   margin: 0;
   list-style-type: none;
-  padding-bottom: 20px;
   flex-basis: 100%;
+  animation: fadeIn 1s;
+  -webkit-animation: fadeIn 1s;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .js .menu__list {
@@ -221,7 +278,7 @@ a[href^="http"]::after {
 .menu__list li {
   padding: 5px 0;
   text-align: center;
-  border-bottom: 1px solid var(--underline-color);
+  /* border-bottom: 1px solid var(--underline-color); */
 }
 
 .menu__list li a {
@@ -230,12 +287,25 @@ a[href^="http"]::after {
 }
 
 .menu__list li.menu__selected {
-  background: var(--underline-color);
+  /* text-decoration: underline;
+  text-decoration-color: var(--underline-color); */
+  font-weight: 700;
 }
 
-.menu__list li.menu__selected a {
-  color: var(--font-color);
+.menu .menu__list:before {
+  position: absolute;
+  content: "";
+  background: var(--font-color);
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  opacity: 25%;
 }
+
+/* .menu__list li.menu__selected a {
+  color: var(--font-color);
+} */
 
 .menu button {
   display: none;
@@ -243,25 +313,34 @@ a[href^="http"]::after {
 
 .js .menu button {
   display: block;
+  padding: 10px 0;
 }
 
-.js .menu button {
+/* .js .menu button {
   border: unset;
   background: url("./images/menu.svg");
   background-repeat: no-repeat;
   height: 25px;
   width: 25px;
+} */
 
-  /* position: absolute;
-  top: 9px;
-  right: 0; */
-}
-
-.js.darkmode .menu button {
-  background: url("./images/dark-mode-menu.svg");
+.js .menu button {
+  border: unset;
+  font-family: inherit;
+  background: none;
 }
 
 .js .menu button span {
+  color: var(--font-color);
+  font-family: inherit;
+  font-size: 16px;
+}
+
+/* .js.darkmode .menu button {
+  background: url("./images/dark-mode-menu.svg");
+} */
+
+/* .js .menu button span {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
   padding: 0;
@@ -269,9 +348,9 @@ a[href^="http"]::after {
   height: 1px;
   width: 1px;
   overflow: hidden;
-}
+} */
 
-@media (min-width: 993px) {
+@media (min-width: 350px) {
   nav {
     display: inline-block;
   }
@@ -284,9 +363,13 @@ a[href^="http"]::after {
     display: flex;
     flex-direction: row;
     list-style-type: none;
-    justify-content: flex-end;
+    justify-content: center;
     margin: 0;
-    padding: 0;
+    animation: none;
+    padding: 10px 0;
+    /* border-top: 1px solid var(--font-color);
+    border-bottom: 1px solid var(--font-color); */
+    /* padding: 15px 0; */
   }
 
   .menu__list li {
