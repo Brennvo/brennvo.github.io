@@ -116,6 +116,8 @@ a:hover {
 
 a[href^="http"] {
   position: relative;
+  /* Must display flex for firefox psuedo element background */
+  display: flex;
 }
 
 a[href^="http"]::after,
