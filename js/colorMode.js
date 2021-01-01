@@ -36,7 +36,7 @@ function resetDarkMode(oldVal) {
 }
 
 function setColorModeToggleListener() {
-  const toggleBtn = document.querySelector(".color-toggle");
+  const toggleBtn = document.querySelector(".color-mode__btn");
 
   if (toggleBtn) {
     toggleBtn.addEventListener("click", function () {
