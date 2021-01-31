@@ -14,18 +14,14 @@
 
 .project__showcase:not(:last-of-type) {
   border-bottom: 1px solid var(--font-color);
-  margin-bottom: 50px;
+  margin-bottom: 16px;
 }
-
-.project__showcase h2 {
-  text-align: left;
-}
-
 .project__showcase img {
   max-width: 100%;
   height: auto;
   object-fit: cover;
   object-position: 50% 50%;
+  margin: 12px 0;
 }
 
 .project__links a:first-child {
