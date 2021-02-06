@@ -118,7 +118,8 @@ body {
   background: var(--bg-color);
   color: var(--font-color);
   position: relative;
-  padding: 0 15px;
+  padding-left: 15px;
+  padding-right: 15px;
   max-width: 600px;
   margin: 0 auto;
 }
