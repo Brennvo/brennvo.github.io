@@ -89,13 +89,43 @@
   */
 
 :root {
-  --bg-color: #fcfcfc;
-  --font-color: #1c1c1c;
-  --underline-color: #658699;
+  --content-width: 715px;
+  --content-padding: 15px;
+  --primary: #4e6172;
+  --secondary: #668d3c;
+  --text: #0a0a0a;
+  --textInverse: #f5f5f5;
+  --text1: #171717;
+  --text2: #39393a;
+  --text3: #5a5a5c;
+  --text4: #9ea0a2;
+  --surface: #ebebeb;
+  --surface1: #f0f0f0;
+  --surface2: #f5f5f5;
+  --surface3: #fafafa;
+  --surface4: #fff;
+}
+
+.darkmode {
+  --primary: #83929f;
+  --secondary: #bdd09f;
+  --text: #f5f5f5;
+  --textInverse: #0a0a0a;
+  --text1: #e8e9e9;
+  --text2: #c6c6c7;
+  --text3: #a5a5a7;
+  --text4: #616365;
+  --surface: #181818;
+  --surface1: #202021;
+  --surface2: #282828;
+  --surface3: #303030;
+  --surface4: #383838;
 }
 
 html {
+  height: 100%;
   box-sizing: border-box;
+  width: 100vw;
 }
 
 *,
@@ -104,28 +134,66 @@ html {
   box-sizing: inherit;
 }
 
-.darkmode {
-  --bg-color: #1c1c1c;
-  --font-color: #fcfcfc;
-  --underline-color: #ebebf54d;
-  --underline-color: #41657c;
-}
-
 /*========Common HTML elements and global layout=========*/
 
 body {
   font-family: "Inter", sans-serif;
-  background: var(--bg-color);
-  color: var(--font-color);
+  background: var(--surface1);
+  color: var(--text);
   position: relative;
-  padding-left: 15px;
-  padding-right: 15px;
-  max-width: 600px;
-  margin: 0 auto;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
 }
 
 main {
   position: relative;
+  width: 100%;
+}
+
+section {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding-left: var(--content-padding);
+  padding-right: var(--content-padding);
+}
+
+footer {
+  margin: 50px 0 25px 0;
+}
+
+.main__content {
+  flex-grow: 1;
+}
+
+/*------Accessibility-------*/
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+  clip: auto !important;
+  -webkit-clip-path: none !important;
+  clip-path: none !important;
+  height: auto !important;
+  margin: auto !important;
+  overflow: visible !important;
+  width: auto !important;
+  white-space: normal !important;
 }
 
 /*------Typography-------*/
@@ -144,22 +212,38 @@ li {
 }
 
 h1 {
+  position: relative;
   font-size: 24px;
+  font-weight: 700;
+  margin: 15px 0 10px 0;
+  width: max-content;
+  margin: 24px 0;
 }
 
-h2,
+/* All h1 elements have a custom border bottom */
+h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 3px;
+  width: 100%;
+  background: var(--secondary);
+}
+
+.darkmode h1::after {
+  background: var(--secondary);
+}
+
+h2 {
+  font-weight: 500;
+  margin: 20px 0;
+}
+
 h3,
 h4,
 h5 {
   font-size: 20px;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  text-align: center;
   font-weight: 400;
   margin: 16px 0;
 }
@@ -175,37 +259,18 @@ h5 {
 /*------Anchor links-------*/
 
 a {
-  text-decoration-color: var(--underline-color);
+  text-decoration: none;
+  text-decoration-color: var(--primary);
 }
 
 a:link,
-a:visited {
-  color: var(--font-color);
+a:visited,
+a:hover {
+  color: var(--text);
 }
 
 a:hover {
-  color: var(--underline-color);
-}
-
-a[href^="http"],
-a[href^="mailto"] {
-  position: relative;
-  /* Must display flex for firefox psuedo element background */
-  display: flex;
-}
-
-a[href^="http"]::after,
-a[href^="mailto"]::after {
-  content: url(./images/external-link.svg);
-  position: relative;
-  padding-left: 5px;
-}
-
-.darkmode a[href^="http"]::after,
-.darkmode a[href^="mailto"]::after {
-  content: url(./images/dark-mode-external-link.svg);
-  position: relative;
-  padding-left: 5px;
+  text-decoration: underline;
 }
 
 /*========Custom UI elements=========*/
@@ -239,11 +304,37 @@ a[href^="mailto"]::after {
   left: 8px;
   top: 15px;
   border-radius: 50%;
-  background: var(--underline-color);
+  background: var(--primary);
 }
 
 .list li:not(:last-of-type) {
   margin-bottom: 5px;
+}
+
+/* Contact icons */
+.contact__list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.contact__list li {
+  padding: 0 10px;
+}
+
+.contact__list li,
+.contact__list li a {
+  line-height: normal;
+}
+
+.contact__icon {
+  width: 20px;
+  fill: var(--text);
+  color: var(--text);
 }
 
 /*------Color Mode Toggle Button-------*/
@@ -302,20 +393,15 @@ a[href^="mailto"]::after {
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
-  margin: 10px 0 30px 0;
+  margin: 0 0 15px 0;
   width: 100%;
+  padding: 10px 0;
+  background: var(--primary);
 }
 
-/* This represents the bottom border around the wrapper */
-.menu::after {
-  position: absolute;
-  content: "";
-  background: var(--font-color);
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 1px;
-  opacity: 25%;
+.darkmode .menu {
+  background: #0c0b0b;
+  background: var(--surface2);
 }
 
 /* If JavaScript is enabled, initially hide the expandable menu list on mobile */
@@ -325,6 +411,7 @@ a[href^="mailto"]::after {
 
 /* The list of nav links will show by default, even on mobile (unless JS is enabled) */
 .menu__list {
+  max-width: var(--content-width);
   position: relative;
   flex-basis: 100%;
   padding: 0;
@@ -332,6 +419,10 @@ a[href^="mailto"]::after {
   list-style-type: none;
   animation: fadeIn 1s;
   -webkit-animation: fadeIn 1s;
+}
+
+.menu__list a {
+  color: white;
 }
 
 @-webkit-keyframes fadeIn {
@@ -351,17 +442,6 @@ a[href^="mailto"]::after {
   }
 }
 
-.menu__list:before {
-  position: absolute;
-  content: "";
-  background: var(--font-color);
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 1px;
-  opacity: 25%;
-}
-
 /* If mobile and menu is clicked, it expands vertically */
 .menu__list.show {
   display: flex;
@@ -370,17 +450,13 @@ a[href^="mailto"]::after {
 }
 
 .menu__list li {
-  padding: 5px 0;
+  padding: 0;
   text-align: center;
 }
 
 .menu__list li.menu__selected {
-  font-weight: 700;
-}
-
-.menu__list li a {
-  text-align: center;
-  text-decoration: none;
+  font-style: italic;
+  font-weight: 450;
 }
 
 /**
@@ -401,7 +477,7 @@ a[href^="mailto"]::after {
 
 /* Styled menu button text */
 .js .menu__btn span {
-  color: var(--font-color);
+  color: var(--text);
   font-family: inherit;
   font-size: 16px;
 }
@@ -417,13 +493,19 @@ a[href^="mailto"]::after {
 
   .menu .menu__list,
   .menu .menu__list.show {
+    max-width: var(--content-width);
+    padding-left: var(--content-padding);
+    padding-right: var(--content-padding);
     display: flex;
     flex-direction: row;
     list-style-type: none;
-    justify-content: center;
+    justify-content: flex-end;
     margin: 0;
-    padding: 10px 0;
     animation: none;
+  }
+
+  .menu__list li:first-child {
+    margin-right: auto;
   }
 
   .menu__list li {
@@ -431,7 +513,7 @@ a[href^="mailto"]::after {
     border-bottom: none;
   }
 
-  .menu .menu__list li:not(:last-of-type) {
+  .menu .menu__list li:not(:last-of-type):not(:first-of-type) {
     padding: 0 10px;
   }
 

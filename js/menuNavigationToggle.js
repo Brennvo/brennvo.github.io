@@ -1,6 +1,4 @@
-(function () {
-  addMenuToggle();
-})();
+addMenuToggle();
 
 function addMenuToggle() {
   const menuBtn = document.querySelector(".menu__btn");

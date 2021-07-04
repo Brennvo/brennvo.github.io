@@ -13,7 +13,108 @@
 
 /*========Custom UI elements=========*/
 
-/*------Ordered/Unordered List-------*/
-.tools__list__def {
-  font-weight: 500;
+/*------Timeline-------*/
+.timeline {
+  border-left: 3px solid var(--text4);
+  padding: 0;
+  margin-left: 10px;
+  list-style-type: unset;
+}
+
+.darkmode .timeline {
+  border-left-color: var(--surface4);
+}
+
+.timeline__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: 25px;
+}
+
+.timeline__card::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: -12px;
+  top: 0px;
+  border-radius: 50%;
+  background: var(--secondary);
+}
+
+.timeline__card:not(:last-of-type) {
+  margin-bottom: 30px;
+}
+
+.timeline__card h3 {
+  line-height: 1.2;
+  margin: 0;
+}
+
+.timeline__card p {
+  margin: 10px 0 0 0;
+}
+
+.timeline__card button {
+  display: none;
+}
+
+.timeline__card__header {
+  width: 75%;
+}
+
+.js .timeline__card button {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  line-height: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  border-style: none;
+  text-align: left;
+  border: transparent 2px solid;
+}
+
+.js .timeline__card button::after {
+  position: relative;
+  right: 0;
+  content: "";
+  width: 100px;
+  height: 100px;
+  background: red;
+}
+
+.js .timeline__card button:focus {
+  border-color: var(--text3);
+}
+
+.js .timeline__card button[aria-expanded="true"] .Accordion-icon {
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+.Accordion-icon {
+  border: solid var(--text);
+  border-width: 0 2px 2px 0;
+  height: 0.5rem;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  right: 1%;
+  transform: translateY(-60%) rotate(45deg);
+  width: 0.5rem;
+}
+
+.Accordion-icon__alt {
+  border: solid var(--text);
+  border-width: 0 2px 2px 0;
+  height: 0.5rem;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-60%) rotate(45deg);
+  width: 0.5rem;
 }
