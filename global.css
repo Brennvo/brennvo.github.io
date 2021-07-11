@@ -363,7 +363,7 @@ a:hover {
   fill: green;
 }
 
-.js .darkmode .color-mode__btn {
+.js.darkmode .color-mode__btn {
   background-image: url("./images/dark-mode-light.svg");
 }
 
@@ -383,9 +383,9 @@ a:hover {
   background-image: url("./images/light-hover.svg");
 }
 
-.js .darkmode .color-mode__btn:active,
-.js .darkmode .color-mode__btn:focus,
-.js .darkmode .color-mode__btn:hover {
+.js.darkmode .color-mode__btn:active,
+.js.darkmode .color-mode__btn:focus,
+.js.darkmode .color-mode__btn:hover {
   background-image: url("./images/dark-mode-light-hover.svg");
 }
 
