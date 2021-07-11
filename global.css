@@ -91,8 +91,9 @@
 :root {
   --content-width: 715px;
   --content-padding: 15px;
-  --primary: #4e6172;
-  --secondary: #668d3c;
+  --primary: #0039a6;
+  --secondary: #4e6172;
+  --link: #20399f;
   --text: #0a0a0a;
   --textInverse: #f5f5f5;
   --text1: #171717;
@@ -107,8 +108,10 @@
 }
 
 .darkmode {
-  --primary: #83929f;
-  --secondary: #bdd09f;
+  --primary: #6cb4ee;
+  --secondary: #83929f;
+  --tertiary: #d57500;
+  --link: #6cb4ee;
   --text: #f5f5f5;
   --textInverse: #0a0a0a;
   --text1: #e8e9e9;
@@ -125,7 +128,7 @@
 html {
   height: 100%;
   box-sizing: border-box;
-  width: 100vw;
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
 }
 
 *,
@@ -211,9 +214,13 @@ li {
   line-height: 35px;
 }
 
+b {
+  font-weight: 400;
+}
+
 h1 {
   position: relative;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 700;
   margin: 15px 0 10px 0;
   width: max-content;
@@ -228,14 +235,15 @@ h1::after {
   bottom: -5px;
   height: 3px;
   width: 100%;
-  background: var(--secondary);
+  background: var(--primary);
 }
 
 .darkmode h1::after {
-  background: var(--secondary);
+  background: var(--primary);
 }
 
 h2 {
+  font-size: 28px;
   font-weight: 500;
   margin: 20px 0;
 }
@@ -253,20 +261,14 @@ h5 {
 * + h3,
 * + h4,
 * + h5 {
-  margin-top: 50px;
+  margin-top: 35px;
 }
 
 /*------Anchor links-------*/
-
-a {
-  text-decoration: none;
-  text-decoration-color: var(--primary);
-}
-
 a:link,
 a:visited,
 a:hover {
-  color: var(--text);
+  color: var(--link);
 }
 
 a:hover {
@@ -304,7 +306,7 @@ a:hover {
   left: 8px;
   top: 15px;
   border-radius: 50%;
-  background: var(--primary);
+  background: var(--secondary);
 }
 
 .list li:not(:last-of-type) {
@@ -339,6 +341,11 @@ a:hover {
 
 /*------Color Mode Toggle Button-------*/
 .color-mode__btn {
+  display: none;
+}
+
+.js .color-mode__btn {
+  display: block;
   position: absolute;
   right: 15px;
   top: 10px;
@@ -356,11 +363,11 @@ a:hover {
   fill: green;
 }
 
-.darkmode .color-mode__btn {
+.js .darkmode .color-mode__btn {
   background-image: url("./images/dark-mode-light.svg");
 }
 
-.color-mode__btn span {
+.js .color-mode__btn span {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
   padding: 0;
@@ -370,16 +377,25 @@ a:hover {
   overflow: hidden;
 }
 
-.color-mode__btn:active,
-.color-mode__btn:focus,
-.color-mode__btn:hover {
+.js .color-mode__btn:active,
+.js .color-mode__btn:focus,
+.js .color-mode__btn:hover {
   background-image: url("./images/light-hover.svg");
 }
 
-.darkmode .color-mode__btn:active,
-.darkmode .color-mode__btn:focus,
-.darkmode .color-mode__btn:hover {
+.js .darkmode .color-mode__btn:active,
+.js .darkmode .color-mode__btn:focus,
+.js .darkmode .color-mode__btn:hover {
   background-image: url("./images/dark-mode-light-hover.svg");
+}
+
+/*------Color Mode Toggle Button-------*/
+.accordion-heading > * {
+  cursor: pointer;
+}
+
+.accordion-content {
+  padding-left: 47px;
 }
 
 /*------Global Navigation Menu-------*/
@@ -389,14 +405,16 @@ a:hover {
   * is always centered on the screen, regardless of mobile or desktop.
   */
 .menu {
+  flex-shrink: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
-  margin: 0 0 15px 0;
+  margin: 0;
   width: 100%;
   padding: 10px 0;
-  background: var(--primary);
+  background: var(--text3);
+  /* box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%); */
 }
 
 .darkmode .menu {
@@ -422,7 +440,9 @@ a:hover {
 }
 
 .menu__list a {
+  text-decoration: none;
   color: white;
+  /* color: var(--text); */
 }
 
 @-webkit-keyframes fadeIn {

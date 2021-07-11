@@ -15,9 +15,8 @@
 
 /*------Timeline-------*/
 .timeline {
-  border-left: 3px solid var(--text4);
+  position: relative;
   padding: 0;
-  margin-left: 10px;
   list-style-type: unset;
 }
 
@@ -29,22 +28,10 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding-left: 25px;
-}
-
-.timeline__card::before {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  left: -12px;
-  top: 0px;
-  border-radius: 50%;
-  background: var(--secondary);
 }
 
 .timeline__card:not(:last-of-type) {
-  margin-bottom: 30px;
+  padding-bottom: 30px;
 }
 
 .timeline__card h3 {
@@ -56,65 +43,94 @@
   margin: 10px 0 0 0;
 }
 
-.timeline__card button {
+/* .timeline__card button {
   display: none;
-}
+} */
 
-.timeline__card__header {
-  width: 75%;
-}
-
-.js .timeline__card button {
+.timeline__card button {
   position: relative;
-  display: block;
+  align-items: flex-start;
+  display: flex;
   width: 100%;
   padding: 0;
   line-height: inherit;
   font-family: inherit;
   font-size: inherit;
+  color: var(--text);
   outline: none;
   border-style: none;
   text-align: left;
   border: transparent 2px solid;
+  background: transparent;
 }
 
-.js .timeline__card button::after {
+.timeline__card__title {
+  flex-shrink: 1;
+}
+
+.accordion-circle {
+  flex-shrink: 0;
+  display: inline-block;
   position: relative;
-  right: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--secondary);
+  z-index: 99;
+  margin-right: 15px;
+}
+
+.js .accordion-circle::before,
+.js .accordion-circle::after {
+  position: absolute;
   content: "";
-  width: 100px;
-  height: 100px;
-  background: red;
+  background: transparent;
 }
 
-.js .timeline__card button:focus {
-  border-color: var(--text3);
+.js .accordion-circle::before {
+  left: 50%;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  transform: translateX(-50%);
+  background: var(--textInverse);
 }
 
-.js .timeline__card button[aria-expanded="true"] .Accordion-icon {
-  transform: translateY(-50%) rotate(-135deg);
-}
-
-.Accordion-icon {
-  border: solid var(--text);
-  border-width: 0 2px 2px 0;
-  height: 0.5rem;
-  pointer-events: none;
-  position: absolute;
+.js .accordion-circle::after {
   top: 50%;
-  right: 1%;
-  transform: translateY(-60%) rotate(45deg);
-  width: 0.5rem;
+  left: 8px;
+  right: 8px;
+  height: 2px;
+  transform: translateY(-50%);
+  background: var(--textInverse);
 }
 
-.Accordion-icon__alt {
-  border: solid var(--text);
-  border-width: 0 2px 2px 0;
-  height: 0.5rem;
-  pointer-events: none;
+.timeline__card::before {
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  transform: translateY(-60%) rotate(45deg);
-  width: 0.5rem;
+  width: 2px;
+  height: 100%;
+  background: var(--text4);
+  left: 16px;
+}
+
+.timeline__card button[aria-expanded="true"] .accordion-circle::before {
+  display: none;
+}
+
+.timeline__card button:focus {
+  border-style: dashed;
+  border-color: var(--text4);
+}
+
+@media (min-width: 435px) {
+  .timeline__card button {
+    align-items: center;
+  }
+}
+
+@media (min-width: 730px) {
+  .list {
+    column-count: 2;
+  }
 }

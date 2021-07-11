@@ -82,10 +82,6 @@ h1.home__hello {
   padding: 0 10px;
 }
 
-.home__nav__list a {
-  color: var(--primary);
-}
-
 /*========Profile Picture=========*/
 
 .profile-image {
