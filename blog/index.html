@@ -40,7 +40,7 @@
       crossorigin
     />
     <link rel="stylesheet" href="../../global.css" />
-    <link rel="stylesheet" href="./project.css" />
+    <link rel="stylesheet" href="./blog.css" />
   </head>
   <body>
     <nav class="menu" role="navigation">
@@ -50,112 +50,41 @@
       <ul class="menu__list">
         <li><a href="../">Home</a></li>
         <li><a href="../about/">About</a></li>
-        <li>
+        <li class="menu__selected">
           <a href="../blog/">Blog</a>
         </li>
-        <li class="menu__selected"><a href="../projects/">Projects</a></li>
+        <li><a href="../projects/">Projects</a></li>
       </ul>
     </nav>
-    <main>
-      <section>
-        <h1>Projects</h1>
+    <main class="main__content">
+      <section class="about">
+        <h1>Coming Soon!</h1>
         <p>
-          The motivation behind my projects is to solve an attainable problem
-          and learn something new.
+          In the meantime, checkout some of my friends and people who have
+          inspired me:
         </p>
-        <div class="project">
-          <div class="project__showcase">
-            <h2>MeMoji</h2>
-            <img
-              src="../../images/memoji2.png"
-              alt="Creating an emoji stick figure with MeMoji and pasting it to an iOS text message conversation."
-            />
-            <div class="project__showcase__desc">
-              <p>
-                In this application, a user can build an emoji stick figure and
-                copy it to their clipboard to share it with others.
-              </p>
-              <p>
-                I built this application because I was frequently creating fancy
-                emoji stick figures. They included a variation of a hat, smiley
-                face, shirt, pant, and shoe — all stacked together. Usually, I'd
-                sift through the thousands of emojis, trying to find the
-                emoticons that worked best. To save myself the time, I decided
-                to create this application to speed up the process and allow
-                others to start sharing their creations, too.
-              </p>
-
-              <p class="list__description">Tech Stack/Technologies:</p>
-              <ol class="list">
-                <li>React JS</li>
-                <li>TypeScript</li>
-                <li>Raw CSS</li>
-              </ol>
-              <a href="https://brennvo.github.io/MeMoji/" target="_blank"
-                >Live Demo</a
-              >
-            </div>
-          </div>
-
-          <div class="project__showcase">
-            <h2>The North Poll</h2>
-            <img
-              src="../../images/north_poll_homepage.png"
-              alt="The North Poll homepage displaying a user's list of gift exchange groups."
-            />
-            <div class="project__showcase__desc">
-              <p>
-                I am currently building this application to make gift exchanges
-                more practical.
-              </p>
-              <p>
-                As a participant of many secret santa gift exchanges (before
-                COVID times), I always liked that it meant I only needed to
-                spend money on a single gift. However, I disliked that I was
-                only thinking about one other individual in the group leading up
-                to the event. To solve this problem, I came up with the North
-                Poll; a slight twist on the secret santa exchange. The idea is
-                that each individual would contribute the price of a single gift
-                — which can be configured — to the group so that each
-                participant can receive a gift. Then, when the polls open in The
-                North Poll, individuals are encouraged to post suggestions for
-                each participant and vote on the one that is their favorite.
-                When the polls close and the most popular suggestion is
-                determined, the group administrator will hypothetically purchase
-                the gifts for each participant and reveal them to the group when
-                they formally meet in person.
-              </p>
-
-              <p>
-                This keeps the integrity of purchasing a single gift with the
-                benefit of having an influence on what each participant
-                receives.
-              </p>
-
-              <p class="list__description">Tech Stack/Technologies:</p>
-              <ol class="list">
-                <li>React JS</li>
-                <li>TypeScript</li>
-                <li>Chakra UI</li>
-                <li>OAuth with JSON Web Tokens (JWT)</li>
-                <li>NestJS (Node Express framework)</li>
-                <li>Postgres</li>
-              </ol>
-              <div class="project__links">
-                <a
-                  href="https://github.com/Brennvo/north-poll-client"
-                  target="_blank"
-                  >Client Source Code</a
-                >
-                <a
-                  href="https://github.com/Brennvo/gift-exchange-api"
-                  target="_blank"
-                  >API Source Code</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
+        <ul class="list">
+          <li>
+            <a href="https://aleex-adal.medium.com/" target="_blank">Aleex</a>
+          </li>
+          <li>
+            <a href="https://benscheer.medium.com/" target="_blank">Ben</a>
+          </li>
+          <li><a href="http://koriwade.github.io/" target="_blank">Kori</a></li>
+          <li>
+            <a href="https://blog.isquaredsoftware.com/" target="_blank"
+              >Mark "acemarke" Erikson</a
+            >
+          </li>
+          <li>
+            <a href="https://www.elinaosborne.com/about" target="_blank"
+              >Elina Osborne</a
+            >
+          </li>
+          <li>
+            <a href="https://cassidoo.co/" target="_blank">Cassidy Williams</a>
+          </li>
+        </ul>
       </section>
     </main>
     <footer>

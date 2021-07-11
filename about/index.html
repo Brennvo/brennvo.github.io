@@ -1,49 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Brennan Arvo's Website</title>
-    <link rel="preload" href="../fonts/inter-v2-latin-300.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="../fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="../fonts/inter-v2-latin-500.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="../fonts/inter-v2-latin-600.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="../fonts/inter-v2-latin-700.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../global.css" />
-    <link rel="stylesheet" href="./about.css" />
-  </head>
-  <body>
-    <nav class="menu" role="navigation">
-      <button class="menu__btn" aria-expanded="false">
-        <span>Menu</span>
-      </button>
-      <ul class="menu__list">
-        <li><a href="../">Home</a></li>
-        <li class="menu__selected"><a href="../about/">About Me</a></li>
-        <li>
-          <a href="../projects/">Projects</a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brennan Arvo's Website</title>
+  <link rel="preload" href="../fonts/inter-v2-latin-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="../fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="../fonts/inter-v2-latin-500.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="../fonts/inter-v2-latin-600.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="../fonts/inter-v2-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="../../global.css" />
+  <link rel="stylesheet" href="./about.css" />
+</head>
+
+<body>
+  <nav class="menu" role="navigation">
+    <button class="menu__btn" aria-expanded="false">
+      <span>Menu</span>
+    </button>
+    <ul class="menu__list">
+      <li><a href="../">Home</a></li>
+      <li class="menu__selected"><a href="../about/">About</a></li>
+      <li>
+        <a href="../blog/">Blog</a>
+      </li>
+      <li><a href="../projects/">Projects</a></li>
+    </ul>
+  </nav>
+  <main class="main__content">
+    <section class="about">
+      <h1>About</h1>
+      <p>
+        My name is Brennan. This is a website that I created for myself to allow others to get to know me.
+      </p>
+
+      <h2>Timeline</h2>
+      <ol class="timeline">
+        <li class="timeline__card" id="accordion-group">
+          <h3 class="accordion-heading">
+            <button>
+              <span class="accordion-circle"></span>
+              <span class="timeline__card__title">2000s: Childhood in Northern Virginia</span>
+            </button>
+          </h3>
+          <div class="accordion-content">
+            <p>
+              I was a shy, observant kid who grew up on the outskirts of Washington, D.C. in Northern Virginia.
+              My childhood was largely spent on a baseball field or playing
+              kick the can with my neighbors in my cul-de-sac. When I wasn't
+              running around, I was usually on the Internet; my favorite
+              memory being a message board I created for my elementary
+              homeroom so that we could communicate outside of the classroom.
+            </p>
+          </div>
         </li>
-        <li><a href="../contact/">Contact</a></li>
+        <li class="timeline__card" id="accordion-group">
+          <h3 class="accordion-heading">
+            <button>
+              <span class="accordion-circle"></span>
+              <span class="timeline__card__title">2014: College at Virginia Tech</span>
+            </button>
+          </h3>
+          <div class="accordion-content">
+            <p>
+              I went into college as an undeclared major. At first, I
+              thought I might like something related to nutrition given my personal
+              interests in fitness, but I quickly realized there was more to
+              it than protein shakes and dumbbells. A year later, I decided to
+              major in Business Information Technology without any
+              expectations. Rather quickly, though, I found my passion:
+              programming.
+            </p>
+            <p>
+              Because I grasp new concepts best with analogies, I was able pickup object
+              oriented programming rather quickly given its analogous nature to the physical world around us. My Java class was the first time I recall feeling excited
+              about schoolwork. I found programming as a way to use my
+              creativity to solve challenging problems and articulate abstractions
+              associated with software.
+            </p>
+            <p>
+              With my newfound passion in programming, it was clear that this
+              was something I wanted to pursue professionally. I made a
+              conscious effort to prioritize class projects and internships involving code
+              automation and software development in order to keep my skills
+              fresh upon graduation.
+            </p>
+          </div>
+        </li>
+        <li class="timeline__card" id="accordion-group">
+          <h3 class="accordion-heading">
+            <button>
+              <span class="accordion-circle"></span>
+              <span class="timeline__card__title"></span>
+              2018: Graduation and Work
+              </span>
+            </button>
+          </h3>
+          <div class="accordion-content">
+            <p>
+              After graduation, I still didn't have a software niche,
+              but I was fortunate to begin working with web applications on
+              day one. After gaining an understanding of the entire web
+              application stack, I found I preferred developing user
+              experiences in the browser given my own history of surfing the
+              web. Given my organic empathy for these type of users, I highly value
+              accessibility, performance, and usability to engineer memorable
+              experiences for them on the web.
+            </p>
+            <p>
+              For more sophisticated applications, I've found front end
+              tooling to be extremely helpful in speeding up development time
+              and ensuring consistency, confidence, and performance in the
+              applications I've supported. Given my knack for learning and the
+              fast-paced environment of front end development, I enjoy
+              tinkering with new tools and leveraging them if appropriate. Some — but
+              not all — of the tools I am familiar with include:
+            </p>
+            <ul class="list">
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>Node</li>
+              <li>WebPack</li>
+              <li>Jest</li>
+              <li>React Testing Library</li>
+              <li>Enzyme</li>
+            </ul>
+          </div>
+        </li>
+        <li class="timeline__card" id="accordion-group">
+          <h3 class="accordion-heading">
+            <button>
+              <span class="accordion-circle"></span>
+              <span class="timeline__card__title">2020: Move to Austin, Texas</span>
+            </button>
+          </h3>
+          <div class="accordion-content">
+            <p>
+              Having lived in Northern Virginia most my life, with the
+              exception of college in Blacksburg, I desperately wanted a
+              change of scenery. With the warmer weather and tech scene
+              conjuring in Austin, I relocated on a whim without ever visiting
+              — which is quite unlike my personality. So far, however, I've enjoyed my
+              time here <b>immensely</b>.
+            </p>
+
+            <p>
+              I consider myself a simple person; my favorite things to do are strolling on <a
+                href="https://www.austintexas.gov/department/ann-and-roy-butler-hike-and-bike-trail-and-boardwalk-lady-bird-lake"
+                target="_blank">Town Lake Trail</a> by bike or foot, going to see live music, or visiting local coffee
+              shops (you definitely need to checkout <a href="https://levercraftcoffee.com/pages/levercraft-coffeeshop"
+                target="_blank">LeverCraft Coffee</a> on the weekends if you're local). I especially appreciate the
+              expressive culture that I encounter on a daily basis in Austin, which can only help but complement the <a
+                aria-label="Photo of Mount Bonnell will open in a new window." href="../images/bonnell.jpeg"
+                target="_blank">astonishing scenery</a> given Austin's proximity to the Hill Country of Texas.
+            </p>
+            <p>
+              If you're in the Austin area and would like to connect, feel
+              free to reach out by using any of my contact links on this
+              website.
+            </p>
+          </div>
+        </li>
+      </ol>
+
+      <h2>Personality Type</h2>
+      <p>If you're just as much intrigued with the Myers–Briggs Type Indicator as I am, you might be curious to know
+        that I classify as an <a href="https://www.16personalities.com/infj-personality" target="_blank">INFJ</a>. If
+        this is the first time you're hearing these terms, no worries. If I do ever do connect with you, though, the
+        conversation will likely be more deep and sophisticated than your typical ice breaker. Just a heads up!
+      </p>
+
+      <h2>My Favorite Things</h2>
+      <ul class="list">
+        <li>Exercising</li>
+        <li>Music</li>
+        <li>Coffee</li>
+        <li>Nature</li>
+        <li>Cats</li>
+        <li>Mechanical keyboards</li>
+        <li>Thought-provoking conversations</li>
+        <li>The Outer Banks, NC</li>
+        <li>Smaller, low-key gatherings</li>
+        <li>Solitude</li>
       </ul>
-    </nav>
-    <main>
-      <section class="about">
-        <h1>Who I Am</h1>
-        <p>I am a front end software engineer currently residing in Austin, Texas. Since my childhood, I've shown a keen interest in the World Wide Web, first by connecting my elementary school homeroom to my own online discussion board. Today, I continue this apprecation by creating performant and accessible web applications.</p>
-
-        <h2>Technologies I Use</h2>
-
-        <ol class="list tools__list">
-          <li><span class="tools__list__def">Languages:</span> JavaScript, TypeScript familiarity</li>
-          <li><span class="tools__list__def">Single page applications:</span> ReactJS, Angular familiarity</li>
-          <li><span class="tools__list__def">REST APIs:</span> Node Express, Java Spring familiarity</li>
-          <li><span class="tools__list__def">Bundlers:</span> Webpack</li>
-          <li><span class="tools__list__def">Testing:</span> Jest, React Testing Library, Enzyme</li>
-          <li><span class="tools__list__def">Databases:</span> Oracle</li>
-        </ol>
-    </main>
-  </body>
-  <script src="../js/determineJsEnabled.js"></script>
-  <script src="../js/colorMode.js"></script>
-  <script src="../js/menuNavigationToggle.js"></script>
+    </section>
+  </main>
+  <footer>
+    <ul class="contact__list">
+      <li>
+        <a href="https://github.com/Brennvo" target="_blank">
+          <svg focusable="false" aria-hidden="true" class="contact__icon" id="Github" version="1.1" viewBox="0 0 30 30"
+            xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path clip-rule="evenodd"
+              d="M19,30h-3.996h-4c0,0,0.011-2.372,0-4  c-5.473,1.178-7-3-7-3c-1-2-2-3-2-3c-2-1.188,0-1,0-1c2,0,3,2,3,2c1.755,2.981,4.878,2.501,6,2c0-1,0.438-2.512,1-3  C7.636,19.508,4,17,4,12s1.004-6,2.004-7C5.802,4.507,4.965,2.685,6.035,0C6.035,0,8,0,10,3c0.991-0.991,4-1,5.001-1  C16,2,19.009,2.009,20,3c2-3,3.969-3,3.969-3c1.07,2.685,0.233,4.507,0.031,5c1,1,2,2,2,7s-3.632,7.508-8,8c0.562,0.488,1,2.21,1,3  V30z"
+              fill-rule="evenodd" id="Cat" />
+          </svg>
+          <span class="sr-only">Brennan's GitHub</span>
+        </a>
+      </li>
+      <li>
+        <a href="mailto:brennan@brennanarvo.com" target="_blank">
+          <svg focusable="false" aria-hidden="true" class="contact__icon" id="Outlined" viewBox="0 0 32 32"
+            xmlns="http://www.w3.org/2000/svg">
+            <g id="Fill">
+              <path
+                d="M2,4V25a3,3,0,0,0,3,3H27a3,3,0,0,0,3-3V4ZM26.27,6l-9.62,8.14a1,1,0,0,1-1.3,0L5.73,6ZM27,26H5a1,1,0,0,1-1-1V7.16l10.06,8.51a3,3,0,0,0,3.88,0L28,7.16V25A1,1,0,0,1,27,26Z" />
+            </g>
+          </svg>
+          <span class="sr-only">Brennan's Email</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/brennan-arvo/" target="_blank">
+          <svg focusable="false" aria-hidden="true" class="contact__icon" id="Layer_1" version="1.0" viewBox="0 0 32 32"
+            xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g>
+              <rect height="23" width="7" y="9" />
+              <path
+                d="M24.003,9C20,9,18.89,10.312,18,12V9h-7v23h7V19c0-2,0-4,3.5-4s3.5,2,3.5,4v13h7V19C32,13,31,9,24.003,9z" />
+              <circle cx="3.5" cy="3.5" r="3.5" />
+            </g>
+            <g />
+            <g />
+            <g />
+            <g />
+            <g />
+            <g />
+          </svg>
+          <span class="sr-only">Brennan's LinkedIn</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com/arvoweb" target="_blank">
+          <svg focusable="false" aria-hidden="true" class="contact__icon" version="1.1" viewBox="0 0 512 512"
+            xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path
+              d="M161.014,464.013c193.208,0 298.885,-160.071 298.885,-298.885c0,-4.546 0,-9.072 -0.307,-13.578c20.558,-14.871 38.305,-33.282 52.408,-54.374c-19.171,8.495 -39.51,14.065 -60.334,16.527c21.924,-13.124 38.343,-33.782 46.182,-58.102c-20.619,12.235 -43.18,20.859 -66.703,25.498c-19.862,-21.121 -47.602,-33.112 -76.593,-33.112c-57.682,0 -105.145,47.464 -105.145,105.144c0,8.002 0.914,15.979 2.722,23.773c-84.418,-4.231 -163.18,-44.161 -216.494,-109.752c-27.724,47.726 -13.379,109.576 32.522,140.226c-16.715,-0.495 -33.071,-5.005 -47.677,-13.148l0,1.331c0.014,49.814 35.447,93.111 84.275,102.974c-15.464,4.217 -31.693,4.833 -47.431,1.802c13.727,42.685 53.311,72.108 98.14,72.95c-37.19,29.227 -83.157,45.103 -130.458,45.056c-8.358,-0.016 -16.708,-0.522 -25.006,-1.516c48.034,30.825 103.94,47.18 161.014,47.104" />
+          </svg>
+          <span class="sr-only">Brennan's Twitter</span>
+        </a>
+      </li>
+    </ul>
+  </footer>
+</body>
+<script src="../js/determineJsEnabled.js"></script>
+<script src="../js/colorMode.js"></script>
+<script src="../js/menuNavigationToggle.js"></script>
+<script src="../js/timelineAccordions.js"></script>
 </html>

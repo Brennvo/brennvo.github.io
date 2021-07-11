@@ -1,7 +1,5 @@
-(function () {
-  initializeColorMode();
-  setColorModeToggleListener();
-})();
+initializeColorMode();
+setColorModeToggleListener();
 
 function hasCookie(name) {
   if (

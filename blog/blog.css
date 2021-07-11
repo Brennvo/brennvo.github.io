@@ -1,0 +1,19 @@
+/***********************************
+************************************
+ About Page
+************************************
+***********************************/
+
+/*========Page Specific Layout=========*/
+
+.about {
+  height: 100%;
+  position: relative;
+}
+
+/*========Custom UI elements=========*/
+
+/*------Ordered/Unordered List-------*/
+.tools__list__def {
+  font-weight: 500;
+}
