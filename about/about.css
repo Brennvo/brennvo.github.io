@@ -43,13 +43,8 @@
   margin: 10px 0 0 0;
 }
 
-/* .timeline__card button {
-  display: none;
-} */
-
 .timeline__card button {
   position: relative;
-  align-items: flex-start;
   display: flex;
   width: 100%;
   padding: 0;
@@ -66,6 +61,7 @@
 
 .timeline__card__title {
   flex-shrink: 1;
+  line-height: 1.6;
 }
 
 .accordion-circle {
@@ -121,12 +117,6 @@
 .timeline__card button:focus {
   border-style: dashed;
   border-color: var(--text4);
-}
-
-@media (min-width: 435px) {
-  .timeline__card button {
-    align-items: center;
-  }
 }
 
 @media (min-width: 730px) {
